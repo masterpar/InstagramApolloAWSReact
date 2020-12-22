@@ -9,6 +9,9 @@ import Navigation from "./routers/Navigation"
 
 
 
+/**
+ * @return {null}
+ */
 function App() {
 
     const [auth, setAuth] = useState(undefined)
@@ -41,6 +44,8 @@ function App() {
         }), [auth]
     )
 
+    //delete loading repeat view login
+    if(auth === undefined) return null
 
     return (
       <ApolloProvider client={client}>
