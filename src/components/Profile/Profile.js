@@ -4,6 +4,7 @@ import {GET_USER} from "../../gql/user"
 import ImageNoFound from '../../assets/png/2.1 avatar.png'
 import './Profile.scss'
 import {Grid, Image} from "semantic-ui-react"
+import UserNotFound from "../UserNotFound"
 
 
 const Profile = ({ username }) => {
@@ -12,7 +13,7 @@ const Profile = ({ username }) => {
         variables: { username  }
     })
     if(loading) return null
-    if(error) return <h2>user not found</h2>
+    if(error) return <UserNotFound/>
     const {getUser} = data
 
     return (
