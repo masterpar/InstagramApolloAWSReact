@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { Form, Button, Loader} from 'semantic-ui-react'
+import { Form, Button} from 'semantic-ui-react'
 import {useFormik} from "formik"
 import {validateFormLoginYup, valuesFormLogin} from "../../../helpers/ValuesValidatesForm"
 import {useMutation} from "@apollo/client"
 import {LOGIN} from "../../../gql/user"
-import {setToken} from "../../../utils/token"
+import {decodeToken, setToken} from "../../../utils/token"
 import useAuth from "../../../hooks/useAuth"
 
 const LoginForm = () => {
@@ -35,7 +35,7 @@ const LoginForm = () => {
                 setError('')
                 const { token } = data.login
                 setToken(token)
-                setUser(token)
+                setUser(decodeToken(token))
                 setLoading(false)
             }catch (e) {
                 setError(e.message)
