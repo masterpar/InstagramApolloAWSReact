@@ -18,7 +18,7 @@ const Header = () => {
                         </Link>
                     </Grid.Column>
                     <Grid.Column width={10} >
-                        <p>Buscador</p>
+                        <p>Search...</p>
                     </Grid.Column>
                     <Grid.Column width={3}>
                         <RighHeader/>

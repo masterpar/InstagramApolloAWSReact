@@ -5,6 +5,7 @@ import Profile from "../components/Profile"
 
 const User = () => {
     const { username } = useParams()
+
     return (
         <>
             <Profile username={username}/>
